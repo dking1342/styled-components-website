@@ -1,7 +1,7 @@
-import React from 'react'
-import './App.css';
-import Navbar from './components/navbar/Navbar';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
 
 interface AppProps {
 
@@ -10,13 +10,7 @@ interface AppProps {
 const App: React.FC<AppProps> = () => {
   return(
     <Router>
-      <Navbar />
-      <div>styled components</div>
-      <div>styled components</div>
-      <div>styled components</div>
-      <div>styled components</div>
-      <div>styled components</div>
-      <div>styled components</div>
+      <Home />
     </Router>
   )
 }
