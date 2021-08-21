@@ -3,6 +3,7 @@
 export type Props = {
     isOpen:boolean;
     toggle:()=>void;
+    url?:string;
 };
 
 export type PageProp = {

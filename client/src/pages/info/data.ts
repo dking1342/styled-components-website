@@ -28,11 +28,23 @@ export const sectionTwo:PageProp = {
 export const sectionThree:PageProp = {
     id:"services",
     lightbg:undefined,
-    topline:"services topline",
-    headline:"service healine",
-    description:"service description",
-    buttonlabel:"Get started",
+    topline:"Connect with us",
+    headline:"Contact our superior customer service",
+    description:"We strive to solve all your problems and provide you an excellent customer experience with many nice memories to remember many years to come",
+    buttonlabel:"Contact Us",
     imgstart:undefined,
     img:'./images/svg3.svg',
     alt:'People',
+}
+
+export const sectionFour:PageProp = {
+    id:"signup",
+    lightbg:"true",
+    topline:"Sign Up",
+    headline:"Create your new account with us",
+    description:"Get all the latest updates and support when you sign up for our services",
+    buttonlabel:"Sign Up",
+    imgstart:"true",
+    img:'./images/svg4.svg',
+    alt:'Sign up',
 }

@@ -7,7 +7,7 @@ import { Props } from '../../types';
 
 // }
 
-const Navbar: React.FC<Props> = ({toggle}) => {
+const Navbar: React.FC<Props> = ({toggle,url}) => {
     return(
         <>
             <Nav>
@@ -18,45 +18,54 @@ const Navbar: React.FC<Props> = ({toggle}) => {
                     <MobileIcon onClick={toggle}>
                         <FaBars />
                     </MobileIcon>
-                    <NavMenu>
-                        <NavItem>
-                            <NavLinks 
-                                to="about"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                            >
-                                About
-                            </NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks 
-                                to="discover"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                            >
-                                Discover
-                            </NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks 
-                                to="services"
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                            >
-                                Services
-                            </NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks to="signup">
-                                Sign Up
-                            </NavLinks>
-                        </NavItem>
-                    </NavMenu>
+                    {
+                        url === '/' ? (
+                            <NavMenu>
+                                <NavItem>
+                                    <NavLinks 
+                                        to="about"
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                    >
+                                        About
+                                    </NavLinks>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLinks 
+                                        to="discover"
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                    >
+                                        Discover
+                                    </NavLinks>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLinks 
+                                        to="services"
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                    >
+                                        Services
+                                    </NavLinks>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLinks 
+                                        to="signup"
+                                        smooth={true}
+                                        duration={500}
+                                        spy={true}
+                                    >
+                                        Sign Up
+                                    </NavLinks>
+                                </NavItem>
+                            </NavMenu>
+                        ) : null
+                    }
                     <NavBtn>
-                        <NavBtnLink to="/signin">
+                        <NavBtnLink to="/signup">
                             Sign In
                         </NavBtnLink>
                     </NavBtn>

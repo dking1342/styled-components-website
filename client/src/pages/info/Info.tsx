@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageProp } from '../../types'
-import { InfoButton, InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLink, Heading, Subtitle, BtnWrap, ImgWrap, Img, Column2 } from './InfoElements'
+import { InfoButton, InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLink, Heading, Subtitle, BtnWrap, ImgWrap, Img, Column2, InfoButtonRoute } from './InfoElements'
 
 type InfoPage = {
     data:PageProp
@@ -24,16 +24,27 @@ const Info: React.FC<InfoPage> = ({data}) => {
                             <Heading darktext={ styles.dark }>{data.headline}</Heading>
                             <Subtitle darktext={styles.dark}>{data.description}</Subtitle>
                             <BtnWrap>
-                                <InfoButton 
-                                    to="home"
-                                    smooth={true}
-                                    duration={500}
-                                    spy={true}
-                                    offset={-80}
-                                    darktext={styles.dark}
-                                >
-                                    {data.buttonlabel}
-                                </InfoButton>
+                                {
+                                    data.id !== "signup" ? (
+                                        <InfoButton 
+                                            to="home"
+                                            smooth={true}
+                                            duration={500}
+                                            spy={true}
+                                            offset={-80}
+                                            darktext={styles.dark}
+                                        >
+                                            {data.buttonlabel}
+                                        </InfoButton>
+                                    ) : (
+                                        <InfoButtonRoute
+                                            to="/signup"
+                                            darktext={styles.dark}
+                                        >
+                                            {data.buttonlabel}
+                                        </InfoButtonRoute>
+                                    )
+                                }
                             </BtnWrap>
                         </TextWrapper>
                     </Column1>

@@ -6,7 +6,7 @@ import { CloseIcon, Icon, SidebarBtnWrap, SidebarContainer, SidebarLink, Sidebar
 
 // }
 
-const Sidebar: React.FC<Props> = ({isOpen,toggle}) => {
+const Sidebar: React.FC<Props> = ({isOpen,toggle,url}) => {
 
     return(
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -14,35 +14,39 @@ const Sidebar: React.FC<Props> = ({isOpen,toggle}) => {
                 <CloseIcon />
             </Icon>
             <SidebarWrapper>
-                <SidebarMenu>
-                    <SidebarLink 
-                        to="about"
-                        onClick={toggle}    
-                    >
-                        About
-                    </SidebarLink>
-                    <SidebarLink 
-                        to="discover"
-                        onClick={toggle}
-                    >
-                        Discover
-                    </SidebarLink>
-                    <SidebarLink
-                        to="services"
-                        onClick={toggle}
-                    >
-                        Services
-                    </SidebarLink>
-                    <SidebarLink 
-                        to="signup"
-                        onClick={toggle}
-                    >
-                        Sign Up
-                    </SidebarLink>
-                </SidebarMenu>
+                {
+                    url === '/' ? (
+                        <SidebarMenu>
+                            <SidebarLink 
+                                to="about"
+                                onClick={toggle}    
+                            >
+                                About
+                            </SidebarLink>
+                            <SidebarLink 
+                                to="discover"
+                                onClick={toggle}
+                            >
+                                Discover
+                            </SidebarLink>
+                            <SidebarLink
+                                to="services"
+                                onClick={toggle}
+                            >
+                                Services
+                            </SidebarLink>
+                            <SidebarLink 
+                                to="signup"
+                                onClick={toggle}
+                            >
+                                Sign Up
+                            </SidebarLink>
+                        </SidebarMenu>
+                    ) : null
+                }
                 <SidebarBtnWrap>
                     <SidebarRoute 
-                        to="/signin"
+                        to="/signup"
                         onClick={toggle}
                     >
                         Sign In

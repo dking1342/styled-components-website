@@ -1,30 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react';
 import Hero from '../components/hero/Hero';
-import Navbar from '../components/navbar/Navbar'
-import Sidebar from '../components/sidebar/Sidebar'
-import { sectionOne, sectionTwo, sectionThree } from './info/data';
+import Layout from '../components/layout/Layout';
+import { sectionFour, sectionOne, sectionThree, sectionTwo } from './info/data';
 import Info from './info/Info';
 
-interface HomeProps {
 
-}
 
-const Home: React.FC<HomeProps> = () => {
-    const [isOpen,setIsOpen] = useState(false);
-
-    const toggle = () => {
-        setIsOpen(!isOpen);
-    }
+const Home: React.FC<{}> = () => {
 
     return(
-        <>
-            <Sidebar isOpen={isOpen} toggle={toggle} />
-            <Navbar isOpen={isOpen} toggle={toggle} />
+        <Layout>
             <Hero />
             <Info data={sectionOne} />
             <Info data={sectionTwo} />
             <Info data={sectionThree} />
-        </>
+            <Info data={sectionFour} />
+        </Layout>
     )
 }
 

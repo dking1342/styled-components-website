@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
+import Signup from './pages/signup/Signup';
 
 interface AppProps {
 
@@ -10,7 +11,8 @@ interface AppProps {
 const App: React.FC<AppProps> = () => {
   return(
     <Router>
-      <Home />
+      <Route path="/" exact component={Home} />
+      <Route path="/signup" exact component={Signup} />
     </Router>
   )
 }

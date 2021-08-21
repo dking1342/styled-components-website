@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { PageProp } from '../../types';
 import { Link as LinkS } from 'react-scroll';
+import { Link as LinkR } from 'react-router-dom';
 
 
 export const InfoContainer = styled.div.attrs((props:PageProp)=>({
@@ -113,6 +114,32 @@ export const InfoButton = styled(LinkS).attrs((props:PageProp)=>({
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:all 0.2s ease-in-out;
+
+    &:hover{
+        transition:all 0.2s ease-in-out;
+        background:${({darktext})=>(darktext === undefined ? 'white' : '#01bf71')};
+    }   
+`;
+
+export const InfoButtonRoute = styled(LinkR).attrs((props:PageProp)=>({
+    fontbig:props.fontbig,
+    big:props.big,
+    darktext:props.darktext,
+}))`
+    border-radius:50px;
+    background:${({darktext})=> (darktext === undefined ? '#01bf71' : '#000')};
+    white-space:nowrap;
+    padding:${({big})=>(big ? '14px 48px' : '12px 30px')};
+    color:${({darktext}) => ( darktext === undefined ? '#000' : '#fff')};
+    font-size:${({fontbig})=>(fontbig ? '20px' : '16px')};
+    outline:none;
+    border:none;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
     transition:all 0.2s ease-in-out;
 
     &:hover{
