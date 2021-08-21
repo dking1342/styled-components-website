@@ -1,5 +1,6 @@
 import React, {  } from 'react'
 import { Props } from '../../types'
+import { navs } from '../../utils/navData'
 import { CloseIcon, Icon, SidebarBtnWrap, SidebarContainer, SidebarLink, SidebarMenu, SidebarRoute, SidebarWrapper } from './SidebarElements'
 
 // interface SidebarProps {
@@ -17,30 +18,17 @@ const Sidebar: React.FC<Props> = ({isOpen,toggle,url}) => {
                 {
                     url === '/' ? (
                         <SidebarMenu>
-                            <SidebarLink 
-                                to="about"
-                                onClick={toggle}    
-                            >
-                                About
-                            </SidebarLink>
-                            <SidebarLink 
-                                to="discover"
-                                onClick={toggle}
-                            >
-                                Discover
-                            </SidebarLink>
-                            <SidebarLink
-                                to="services"
-                                onClick={toggle}
-                            >
-                                Services
-                            </SidebarLink>
-                            <SidebarLink 
-                                to="signup"
-                                onClick={toggle}
-                            >
-                                Sign Up
-                            </SidebarLink>
+                            {
+                                navs.map(nav=>(
+                                    <SidebarLink 
+                                        key={nav.id}
+                                        to={nav.to}
+                                        onClick={toggle}    
+                                    >
+                                        {nav.label}
+                                    </SidebarLink>
+                                ))
+                            }
                         </SidebarMenu>
                     ) : null
                 }

@@ -8,13 +8,7 @@ interface SignupProps {
 const Signup: React.FC<SignupProps> = () => {
     return(
         <Layout>
-            <div>signup page</div>
-            <div>signup page</div>
-            <div>signup page</div>
-            <div>signup page</div>
-            <div>signup page</div>
-            <div>signup page</div>
-            <div>signup page</div>
+            
         </Layout>
     )
 }

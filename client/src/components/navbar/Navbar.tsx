@@ -2,6 +2,7 @@ import React from 'react'
 import { Nav, NavbarContainer,NavLogo, MobileIcon, NavMenu,NavItem,NavLinks, NavBtn, NavBtnLink } from './NavbarElements'
 import { FaBars } from 'react-icons/fa';
 import { Props } from '../../types';
+import { navs } from '../../utils/navData';
 
 // interface NavbarProps {
 
@@ -21,46 +22,20 @@ const Navbar: React.FC<Props> = ({toggle,url}) => {
                     {
                         url === '/' ? (
                             <NavMenu>
-                                <NavItem>
-                                    <NavLinks 
-                                        to="about"
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                    >
-                                        About
-                                    </NavLinks>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLinks 
-                                        to="discover"
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                    >
-                                        Discover
-                                    </NavLinks>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLinks 
-                                        to="services"
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                    >
-                                        Services
-                                    </NavLinks>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLinks 
-                                        to="signup"
-                                        smooth={true}
-                                        duration={500}
-                                        spy={true}
-                                    >
-                                        Sign Up
-                                    </NavLinks>
-                                </NavItem>
+                                {
+                                    navs.map(nav=>(
+                                        <NavItem key={nav.id}>
+                                            <NavLinks 
+                                                to={nav.to}
+                                                smooth={true}
+                                                duration={500}
+                                                spy={true}
+                                            >
+                                                {nav.label}
+                                            </NavLinks>
+                                        </NavItem>
+                                    ))
+                                }
                             </NavMenu>
                         ) : null
                     }
