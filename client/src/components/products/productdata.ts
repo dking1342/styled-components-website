@@ -8,14 +8,14 @@ export const content = [
     },
     {
         id:2,
-        heading:'heading',
-        text:'text',
+        heading:'Virtual Offices',
+        text:'You can access our platform online anywhere in the world',
         img:'./images/svg2.svg'
     },
     {
         id:3,
-        heading:'heading 3',
-        text:'text 3',
+        heading:'Premium Benefits',
+        text:'Unlock our special membership card that returns 5% cash back',
         img:'./images/svg3.svg'
     }
 ]
